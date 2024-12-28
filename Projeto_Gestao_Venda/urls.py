@@ -16,7 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from APP_Cadastro.views import CadastroFornecedor,CadastroLoja ,CadastroProduto, CadastroCliente, CadastroVendedor
+from APP_Estoque.views import RequisicaoCompra,Pedido
+from APP_Vendas.views import Vendas
 
 urlpatterns = [
+    path('cadastrofornecedor/', CadastroFornecedor, name='cadastrofornecedor'),
+    path('cadastroloja/', CadastroLoja, name='cadastroloja'),
+    path('cadastroproduto/', CadastroProduto, name='cadastroproduto'),
+    path('cadastrocliente/', CadastroCliente, name='cadastrocliente'),
+    path('cadastrovendedor/', CadastroVendedor, name='cadastrovendedor'),
+    path('requisicaocompra/', RequisicaoCompra, name='requisicaocompra'),
+    path('pedido/', Pedido, name='pedido'),
+    path('vendas/', Vendas, name='vendas'),
     path('admin/', admin.site.urls),
 ]

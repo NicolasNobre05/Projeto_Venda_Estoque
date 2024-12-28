@@ -31,7 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'APP_Gestao_Venda.apps.AppGestaoVendaConfig',
+    'APP_Cadastro.apps.AppCadastroConfig',
+    'APP_Estoque.apps.AppEstoqueConfig',
+    'APP_Vendas.apps.AppVendasConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
