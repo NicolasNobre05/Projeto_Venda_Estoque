@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Sistema de Gestão de Vendas e Estoque</h1>
+    
+    <nav>
+        <ul>
+            <li><a href="{% url 'cadastrofornecedor' %}">Cadastro de Fornecedor</a></li>
+            <li><a href="{% url 'cadastrovendedor' %}">Cadastro de Vendedor</a></li>
+            <li><a href="{% url 'cadastrocliente' %}">Cadastro de Cliente</a></li>
+            <li><a href="{% url 'cadastroloja' %}">Cadastro de Loja</a></li>
+            <li><a href="{% url 'cadastroproduto' %}">Cadastro de Produto</a></li>
+            <li><a href="{% url 'vendas' %}">Vendas</a></li>
+            <li><a href="{% url 'requisicaocompra' %}">Requisição de Compra</a></li>
+            <li><a href="{% url 'pedido' %}">Pedido</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
