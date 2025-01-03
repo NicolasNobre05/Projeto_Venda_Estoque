@@ -7,6 +7,11 @@
 </head>
 <body>
     <h1>Cadastro de vendedor</h1>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
     <form method="POST" action="{% url 'cadastrovendedor' %}">
         {% csrf_token %}
         
