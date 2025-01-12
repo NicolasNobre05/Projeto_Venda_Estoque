@@ -4,7 +4,7 @@ from mysql.connector import Error
 # Configurações de conexão
 HOST = 'localhost'
 ROOT_USER = 'root'
-ROOT_PASSWORD = 'Niki.zdsaw2'
+ROOT_PASSWORD = 'admin'
 DB_NAME = 'projetosvendasestoque'
 NEW_USER = 'UserProjetosVendas'
 NEW_PASSWORD = 'ProjetosVendas'

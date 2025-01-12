@@ -1,0 +1,99 @@
+<!-- listar_vendas.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Vendas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1f72e8;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2em 0;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #1f72e8;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Listagem de Vendas</h1>
+    </header>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Vendedor</th>
+                    <th>Data</th>
+                    <th>Valor Total</th>
+                    <th>Forma de Pagamento</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for venda in vendas %}
+                    <tr>
+                        <td>{{ venda.id }}</td>
+                        <td>{{ venda.cliente }}</td>
+                        <td>{{ venda.vendedor }}</td>
+                        <td>{{ venda.data_venda }}</td>
+                        <td>{{ venda.valor_total }}</td>
+                        <td>{{ venda.forma_pagamento }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'cadastrar_venda' %}" class="btn">Cadastrar Nova Venda</a>
+    </div>
+</body>
+</html>
