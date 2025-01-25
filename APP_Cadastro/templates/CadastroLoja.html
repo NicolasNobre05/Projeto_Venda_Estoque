@@ -4,33 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1f72e8;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+        }
+
+        .form-group button {
+            width: 100%;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: #1f72e8;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-around; /* Distribui os itens uniformemente */
+        }
+
+        nav ul li {
+            margin: 0 10px; /* Espaçamento entre os links */
+        }
+
+        nav ul li a {
+            font-size: 12px;
+            color: white; /* Cor do texto dos links */
+            text-decoration: none; /* Remove o sublinhado */
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline; /* Sublinha ao passar o mouse */
+        }
+    </style>
 </head>
 <body>
-    <h1>Cadastro de Empresa</h1>
-    <form method="POST" action="{% url 'cadastroloja' %}">
-        {% csrf_token %}
-        <label for="CNPJ">CNPJ:</label>
-        <input type="text" id="CNPJ" name="cnpj" required><br><br>
+    <header>
+        <h1>Cadastrar Loja</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'cadastrofornecedor' %}">Cadastro de Fornecedor</a></li>
+                <li><a href="{% url 'cadastrovendedor' %}">Cadastro de Vendedor</a></li>
+                <li><a href="{% url 'cadastrocliente' %}">Cadastro de Cliente</a></li>
+                <li><a href="{% url 'cadastroloja' %}">Cadastro de Loja</a></li>
+                <li><a href="{% url 'cadastroproduto' %}">Cadastro de Produto</a></li>
+                <li><a href="{% url 'vendas' %}">Vendas</a></li>
+                <li><a href="{% url 'requisicaocompra' %}">Requisição de Compra</a></li>
+                <li><a href="{% url 'pedido' %}">Pedido</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required><br><br>
+    <div class="container">
+        <form method="POST" action="{% url 'cadastroloja' %}">
+            {% csrf_token %}
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+            <div class="form-group">
+                <label for="cnpj">CNPJ:</label>
+                <input type="text" id="cnpj" name="cnpj" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="nome">Nome da Loja:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
 
-        <label for="telefone">Telefone:</label>
-        <input type="text" id="telefone" name="telefone" required><br><br>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
 
-        <label for="cep">CEP:</label>
-        <input type="text" id="cep" name="cep" required><br><br>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone" required>
+            </div>
 
-        <label for="rua">Rua:</label>
-        <input type="text" id="rua" name="rua" required><br><br>
+            <div class="form-group">
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" required>
+            </div>
 
-        <label for="numeroResidencial">Número:</label>
-        <input type="text" id="numeroResidencial" name="numeroResidencial" required><br><br>
+            <div class="form-group">
+                <label for="rua">Rua:</label>
+                <input type="text" id="rua" name="rua" required>
+            </div>
 
-        <button type="submit">Cadastrar</button>
-    </form>
+            <div class="form-group">
+                <label for="numeroResidencial">Número:</label>
+                <input type="text" id="numeroResidencial" name="numeroResidencial" required>
+            </div>
+
+            
+            <button type="submit">Cadastrar</button>
+           
+        </form>
+
+    </div>
 </body>
 </html>

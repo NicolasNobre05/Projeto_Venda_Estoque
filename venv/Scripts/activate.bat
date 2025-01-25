@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\isabe\OneDrive\Área de Trabalho\Projeto_Venda_Estoque\venv
+set VIRTUAL_ENV=D:\PROJETOS-SITE\python\Desafios\Projeto_Gestão_Vendas_Estoque\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

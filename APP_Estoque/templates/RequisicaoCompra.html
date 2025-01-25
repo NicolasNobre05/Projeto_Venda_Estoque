@@ -90,11 +90,45 @@
         .back-link a:hover {
             text-decoration: underline;
         }
+
+        nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-around; /* Distribui os itens uniformemente */
+        }
+
+        nav ul li {
+            margin: 0 10px; /* Espaçamento entre os links */
+        }
+
+        nav ul li a {
+            font-size: 12px;
+            color: white; /* Cor do texto dos links */
+            text-decoration: none; /* Remove o sublinhado */
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline; /* Sublinha ao passar o mouse */
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Requisição de Compra</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'cadastrofornecedor' %}">Cadastro de Fornecedor</a></li>
+                <li><a href="{% url 'cadastrovendedor' %}">Cadastro de Vendedor</a></li>
+                <li><a href="{% url 'cadastrocliente' %}">Cadastro de Cliente</a></li>
+                <li><a href="{% url 'cadastroloja' %}">Cadastro de Loja</a></li>
+                <li><a href="{% url 'cadastroproduto' %}">Cadastro de Produto</a></li>
+                <li><a href="{% url 'vendas' %}">Vendas</a></li>
+                <li><a href="{% url 'requisicaocompra' %}">Requisição de Compra</a></li>
+                <li><a href="{% url 'pedido' %}">Pedido</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container">
@@ -106,7 +140,7 @@
                 {{ form.produto }}
             </div>
 
-            <div class="form-group">
+            <div class="form-group">,
                 <label for="quantidade">Quantidade</label>
                 {{ form.quantidade }}
             </div>

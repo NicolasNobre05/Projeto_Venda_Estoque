@@ -17,6 +17,9 @@ class Cliente(models.Model):
     estado = models.CharField(max_length=5)
     rua = models.CharField(max_length=200)
     numeroResidencial = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return self.nome
     
 class Funcionario(models.Model):
     id_funcionario = models.AutoField(primary_key=True)
@@ -33,6 +36,9 @@ class Funcionario(models.Model):
     rua = models.CharField(max_length=200)
     numeroResidencial = models.CharField(max_length=100, null=True)
 
+    def __str__(self):
+        return self.nome
+
 class Fornecedor(models.Model):
     id_fornecedor = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=100)
@@ -45,6 +51,9 @@ class Fornecedor(models.Model):
     estado = models.CharField(max_length=5)
     rua = models.CharField(max_length=200)
     numeroResidencial = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return self.nome
 
 class Lojas(models.Model):
     id_loja = models.AutoField(primary_key=True)
@@ -59,8 +68,14 @@ class Lojas(models.Model):
     rua = models.CharField(max_length=200)
     numeroResidencial = models.CharField(max_length=100, null=True)
 
+    def __str__(self):
+        return self.nome
+
 class Produtos(models.Model):
     id_produto = models.AutoField(primary_key=True)
     descricao = models.CharField(max_length=200)
     preco = models.FloatField()
     unidadeMedida = models.CharField(max_length=100)   
+
+    def __str__(self):
+        return f"{self.descricao} - {self.preco} - {self.unidadeMedida}"

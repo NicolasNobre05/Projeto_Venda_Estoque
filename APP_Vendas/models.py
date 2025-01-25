@@ -1,7 +1,8 @@
 from django.db import models
-from APP_Cadastro.models import Produtos, Cliente, Funcionario 
+from APP_Cadastro.models import Produtos, Cliente, Funcionario ,Lojas
 
 class Venda(models.Model):
+    loja = models.ForeignKey('APP_Cadastro.Lojas', on_delete=models.CASCADE)
     cliente = models.ForeignKey('APP_Cadastro.Cliente', on_delete=models.CASCADE)
     vendedor = models.ForeignKey('APP_Cadastro.Funcionario', on_delete=models.CASCADE)
     produtos = models.ManyToManyField('APP_Cadastro.Produtos') 
